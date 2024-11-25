@@ -7,7 +7,6 @@
   },
   "workspaces": [
     "packages/*"
-
   ],
   "scripts": {
     "dev": "turbo dev  --filter=!example",
