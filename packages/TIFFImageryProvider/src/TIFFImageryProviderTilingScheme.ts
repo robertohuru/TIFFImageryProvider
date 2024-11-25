@@ -6,7 +6,7 @@ import {
   WebMercatorTilingScheme,
   Cartesian3,
   Ellipsoid,
-} from 'cesium';
+} from 'terriajs-cesium';
 
 class TIFFImageryProviderTilingScheme extends WebMercatorTilingScheme {
   readonly nativeRectangle: Rectangle;

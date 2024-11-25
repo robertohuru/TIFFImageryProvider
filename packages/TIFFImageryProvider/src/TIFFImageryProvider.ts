@@ -1,4 +1,4 @@
-import { Event, GeographicTilingScheme, Credit, Rectangle, ImageryLayerFeatureInfo, Math as CesiumMath, DeveloperError, defined, Cartesian2, WebMercatorTilingScheme } from "cesium";
+import { Event, GeographicTilingScheme, Credit, Rectangle, ImageryLayerFeatureInfo, Math as CesiumMath, DeveloperError, defined, Cartesian2, WebMercatorTilingScheme } from "terriajs-cesium";
 import GeoTIFF, { Pool, fromUrl, fromBlob, GeoTIFFImage, TypedArrayArrayWithDimensions } from 'geotiff';
 
 import { addColorScale, plot } from './plotty'
