@@ -766,7 +766,7 @@ export class TIFFImageryProvider {
     res?.forEach((item: any, index: number) => {
       data[index] = item?.[0];
     })
-    featureInfo.data = data
+    featureInfo.data = data;
     featureInfo.properties = data;
     if (res) {
       featureInfo.configureDescriptionFromProperties(data)
