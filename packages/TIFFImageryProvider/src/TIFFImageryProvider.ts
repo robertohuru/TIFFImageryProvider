@@ -24,7 +24,7 @@ export interface SingleBandRenderOptions {
    */
   colorScale?: ColorScaleNames;
 
-  /** custom interpolate colors, [stopValue(0 - 1), color] or [color], if the latter, means equal distribution 
+  /** custom interpolate colors, [stopValue(0 - 1), color] or [color], if the latter, means equal distribution
    * @example
    * [[0, 'red'], [0.6, 'green'], [1, 'blue']]
   */
@@ -66,7 +66,7 @@ export interface SingleBandRenderOptions {
    * Supported mathematical operations are: add '+', subtract '-', multiply '*', divide '/', power '**', unary plus '+a', unary minus '-a'.
    * Useful GLSL functions are for example: radians, degrees, sin, asin, cos, acos, tan, atan, log2, log, sqrt, exp2, exp, abs, sign, floor, ceil, fract.
    * Don't forget to set the domain parameter!
-   * @example 
+   * @example
    * '-2 * sin(3.1415 - b1) ** 2'
    * '(b1 - b2) / (b1 + b2)'
    */
@@ -122,7 +122,7 @@ export interface TIFFImageryProviderOptions {
   credit?: string;
   tileSize?: number;
   maximumLevel?: number;
-  /** 
+  /**
    * If true, the maximumLevel will be calculated based on the tile number
    * @default false
    * */
@@ -143,9 +143,9 @@ export interface TIFFImageryProviderOptions {
   } | undefined;
   /** cache size, defaults to 100 */
   cacheSize?: number;
-  /** resample web worker pool size, defaults to the number of CPUs available. 
-   * When this parameter is `null` or 0, 
-   * then the resampling will be done in the main thread. 
+  /** resample web worker pool size, defaults to the number of CPUs available.
+   * When this parameter is `null` or 0,
+   * then the resampling will be done in the main thread.
    * */
   workerPoolSize?: number;
 }
@@ -197,9 +197,9 @@ export class TIFFImageryProvider {
 
   constructor(private readonly options: TIFFImageryProviderOptions & {
     /**
-     * @deprecated 
+     * @deprecated
      * Deprecated after cesium@1.104+, you can use fromUrl instead
-     * @example 
+     * @example
      * const provider = await TIFFImageryProvider.fromUrl(url)
      */
     url: string | File | Blob;
@@ -499,9 +499,9 @@ export class TIFFImageryProvider {
 
   /**
    * Get tile data
-   * @param x 
-   * @param y 
-   * @param z 
+   * @param x
+   * @param y
+   * @param z
    */
   private async _loadTile(reqx: number, reqy: number, reqz: number) {
     let x = reqx, y = reqy, z = reqz, startX = reqx, startY = reqy;
@@ -767,6 +767,7 @@ export class TIFFImageryProvider {
       data[index] = item?.[0];
     })
     featureInfo.data = data
+    featureInfo.properties = data;
     if (res) {
       featureInfo.configureDescriptionFromProperties(data)
     }
